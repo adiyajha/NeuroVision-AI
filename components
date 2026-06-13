@@ -61,22 +61,20 @@ export { Button, buttonVariants }
 UI completes 
 
 application-section.tsx
-"use client"
-
-import { motion } from "framer-motion"
-import { Building2, Car, Factory, HeartPulse, Home, Plug, Trees, Users } from "lucide-react"
-import { Reveal, SectionHeader } from "./primitives"
+ import { motion } from 'framer-motion'
+import { Building2, Car, Factory, HeartPulse, Home, Plug, Trees, Users } from 'lucide-react'
+import { Reveal, SectionHeader } from './primitives'
 
 export function ApplicationsSection() {
   const apps = [
-    { icon: <Home />, title: "Home Security", text: "Quiet protection for what you love most." },
-    { icon: <Building2 />, title: "Smart Cities", text: "Awareness at the scale of an entire city." },
-    { icon: <Car />, title: "Transportation", text: "Watch movement, not motion." },
-    { icon: <Factory />, title: "Industrial Safety", text: "Catch the moment before it becomes an incident." },
-    { icon: <Trees />, title: "Wildlife Monitoring", text: "Observe nature without disturbing it." },
-    { icon: <HeartPulse />, title: "Healthcare", text: "Attentive care without constant surveillance." },
-    { icon: <Plug />, title: "Critical Infrastructure", text: "Protect what powers everything else." },
-    { icon: <Users />, title: "Public Spaces", text: "Safety that respects the rhythm of life." },
+    { icon: <Home />, title: 'Home Security', text: 'Quiet protection for what you love most.' },
+    { icon: <Building2 />, title: 'Smart Cities', text: 'Awareness at the scale of an entire city.' },
+    { icon: <Car />, title: 'Transportation', text: 'Watch movement, not motion.' },
+    { icon: <Factory />, title: 'Industrial Safety', text: 'Catch the moment before it becomes an incident.' },
+    { icon: <Trees />, title: 'Wildlife Monitoring', text: 'Observe nature without disturbing it.' },
+    { icon: <HeartPulse />, title: 'Healthcare', text: 'Attentive care without constant surveillance.' },
+    { icon: <Plug />, title: 'Critical Infrastructure', text: 'Protect what powers everything else.' },
+    { icon: <Users />, title: 'Public Spaces', text: 'Safety that respects the rhythm of life.' },
   ]
   return (
     <section id="applications" className="relative py-28 md:py-32 px-6">
@@ -114,11 +112,10 @@ export function ApplicationsSection() {
 }
 
 breakthrough-section.tsx 
-"use client"
-
-import { motion } from "framer-motion"
-import { Activity, ShieldCheck, Sparkles } from "lucide-react"
-import { Reveal, SectionHeader } from "./primitives"
+ 
+ import { motion } from 'framer-motion'
+import { Activity, ShieldCheck, Sparkles } from 'lucide-react'
+import { Reveal, SectionHeader } from './primitives'
 
 export function BreakthroughSection() {
   return (
@@ -142,7 +139,7 @@ export function BreakthroughSection() {
               <div>
                 <div className="text-xs uppercase tracking-widest text-muted-foreground mb-3 font-mono">Ignores</div>
                 <ul className="space-y-3">
-                  {["Background movement", "Repetitive patterns", "Irrelevant activity"].map((t) => (
+                  {['Background movement', 'Repetitive patterns', 'Irrelevant activity'].map((t) => (
                     <li key={t} className="flex items-center gap-3 text-foreground/70">
                       <span className="w-1.5 h-1.5 rounded-full bg-muted-foreground/50" />
                       {t}
@@ -157,9 +154,9 @@ export function BreakthroughSection() {
                 <div className="text-xs uppercase tracking-widest text-cyber mb-3 font-mono">Instantly reacts to</div>
                 <ul className="space-y-3">
                   {[
-                    { t: "Meaningful change", i: <Sparkles className="w-4 h-4" /> },
-                    { t: "Unexpected motion", i: <Activity className="w-4 h-4" /> },
-                    { t: "Potential threats", i: <ShieldCheck className="w-4 h-4" /> },
+                    { t: 'Meaningful change', i: <Sparkles className="w-4 h-4" /> },
+                    { t: 'Unexpected motion', i: <Activity className="w-4 h-4" /> },
+                    { t: 'Potential threats', i: <ShieldCheck className="w-4 h-4" /> },
                   ].map((x) => (
                     <li key={x.t} className="flex items-center gap-3 text-foreground">
                       <span className="w-7 h-7 rounded-lg grid place-items-center bg-gradient-to-br from-cyber/20 to-violet/20 text-cyber">
@@ -221,7 +218,7 @@ function BrainVisualization() {
                 strokeWidth="1.2"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: [0.1, 0.8, 0.1] }}
-                transition={{ duration: 3, delay: i * 0.15, repeat: Number.POSITIVE_INFINITY }}
+                transition={{ duration: 3, delay: i * 0.15, repeat: Infinity }}
               />
             )
           })}
@@ -233,7 +230,7 @@ function BrainVisualization() {
             stroke="url(#syn)"
             strokeWidth="1.5"
             animate={{ r: [40, 50, 40], opacity: [0.6, 1, 0.6] }}
-            transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY }}
+            transition={{ duration: 3, repeat: Infinity }}
           />
           <circle cx="200" cy="200" r="6" fill="oklch(0.92 0.1 250)" />
           {Array.from({ length: 24 }).map((_, i) => {
@@ -249,7 +246,7 @@ function BrainVisualization() {
                 r="2"
                 fill="oklch(0.85 0.15 250)"
                 animate={{ opacity: [0.3, 1, 0.3] }}
-                transition={{ duration: 2, delay: i * 0.08, repeat: Number.POSITIVE_INFINITY }}
+                transition={{ duration: 2, delay: i * 0.08, repeat: Infinity }}
               />
             )
           })}
@@ -262,13 +259,13 @@ function BrainVisualization() {
     </div>
   )
 }
- cta-footer.tsx
-                  "use client"
 
-import { ArrowRight } from "lucide-react"
-import { Reveal } from "./primitives"
-import { Particles } from "./neural-background"
-import { LogoMark } from "./nav"
+ cta-footer.tsx
+                  
+ import { ArrowRight } from 'lucide-react'
+import { Reveal } from './primitives'
+import { Particles } from './neural-background'
+import { LogoMark } from './nav'
 
 export function FinalCTA() {
   return (
@@ -333,18 +330,17 @@ export function Footer() {
   )
 }
 
-future-vision.tsx
-  "use client"
 
-import { Reveal, SectionHeader } from "./primitives"
+future-vision.tsx
+   import { Reveal, SectionHeader } from './primitives'
 
 export function FutureVision() {
   const phases = [
-    { phase: "Now", title: "Intelligent Recognition", text: "Detect and understand meaningful events in real time." },
-    { phase: "Next", title: "Advanced Threat Understanding", text: "Reason about intent and context before action." },
-    { phase: "2026", title: "Environmental Awareness", text: "Sense the broader state of a space — beyond visual cues." },
-    { phase: "2027", title: "Predictive Intelligence", text: "Anticipate events moments before they unfold." },
-    { phase: "Horizon", title: "Autonomous Monitoring", text: "Self-coordinating networks of attentive intelligence." },
+    { phase: 'Now', title: 'Intelligent Recognition', text: 'Detect and understand meaningful events in real time.' },
+    { phase: 'Next', title: 'Advanced Threat Understanding', text: 'Reason about intent and context before action.' },
+    { phase: '2026', title: 'Environmental Awareness', text: 'Sense the broader state of a space — beyond visual cues.' },
+    { phase: '2027', title: 'Predictive Intelligence', text: 'Anticipate events moments before they unfold.' },
+    { phase: 'Horizon', title: 'Autonomous Monitoring', text: 'Self-coordinating networks of attentive intelligence.' },
   ]
   return (
     <section id="vision" className="relative py-28 md:py-32 px-6">
@@ -362,8 +358,8 @@ export function FutureVision() {
           <div className="space-y-12">
             {phases.map((p, i) => (
               <Reveal key={p.title} delay={i * 0.05}>
-                <div className={`relative md:grid md:grid-cols-2 md:gap-12 items-center ${i % 2 ? "md:[&>*:first-child]:order-2" : ""}`}>
-                  <div className={`pl-12 md:pl-0 ${i % 2 ? "md:text-left md:pl-12" : "md:text-right md:pr-12"}`}>
+                <div className={`relative md:grid md:grid-cols-2 md:gap-12 items-center ${i % 2 ? 'md:[&>*:first-child]:order-2' : ''}`}>
+                  <div className={`pl-12 md:pl-0 ${i % 2 ? 'md:text-left md:pl-12' : 'md:text-right md:pr-12'}`}>
                     <div className="text-xs uppercase tracking-widest text-cyber mb-2 font-mono">{p.phase}</div>
                     <h3 className="text-2xl md:text-3xl font-display font-semibold mb-2">{p.title}</h3>
                     <p className="text-muted-foreground">{p.text}</p>
@@ -379,17 +375,16 @@ export function FutureVision() {
     </section>
   )
 }
- hero.tsx
-              "use client"
 
-import { motion, useScroll, useTransform } from "framer-motion"
-import { useRef, type ReactNode } from "react"
-import { Activity, ArrowUpRight, Brain, Cpu, Play, Zap } from "lucide-react"
-import { NeuralBackground } from "./neural-background"
+ hero.tsx
+              import { motion, useScroll, useTransform } from 'framer-motion'
+import { useRef, type ReactNode } from 'react'
+import { Activity, ArrowUpRight, Brain, Cpu, Play, Zap } from 'lucide-react'
+import { NeuralBackground } from './neural-background'
 
 export function Hero() {
   const ref = useRef<HTMLDivElement>(null)
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] })
+  const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] })
   const y = useTransform(scrollYProgress, [0, 1], [0, 150])
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0])
 
@@ -486,19 +481,18 @@ function HeroMetric({ value, label, icon }: { value: string; label: string; icon
     </motion.div>
   )
 }
- workgflow.tsx
-    "use client"
 
-import { motion } from "framer-motion"
-import { Brain, Eye, Radar, Zap } from "lucide-react"
-import { Reveal, SectionHeader } from "./primitives"
+ workgflow.tsx
+    import { motion } from 'framer-motion'
+import { Brain, Eye, Radar, Zap } from 'lucide-react'
+import { Reveal, SectionHeader } from './primitives'
 
 export function HowItWorks() {
   const steps = [
-    { n: "01", icon: <Eye className="w-6 h-6" />, title: "Observe", text: "Continuous awareness of the environment — passive, efficient, always present." },
-    { n: "02", icon: <Radar className="w-6 h-6" />, title: "Detect", text: "Recognize meaningful activity the moment it emerges from the baseline." },
-    { n: "03", icon: <Brain className="w-6 h-6" />, title: "Understand", text: "Awaken full intelligence to analyze the event with deep context." },
-    { n: "04", icon: <Zap className="w-6 h-6" />, title: "Respond", text: "Deliver insights and alerts instantly — to the right person, at the right time." },
+    { n: '01', icon: <Eye className="w-6 h-6" />, title: 'Observe', text: 'Continuous awareness of the environment — passive, efficient, always present.' },
+    { n: '02', icon: <Radar className="w-6 h-6" />, title: 'Detect', text: 'Recognize meaningful activity the moment it emerges from the baseline.' },
+    { n: '03', icon: <Brain className="w-6 h-6" />, title: 'Understand', text: 'Awaken full intelligence to analyze the event with deep context.' },
+    { n: '04', icon: <Zap className="w-6 h-6" />, title: 'Respond', text: 'Deliver insights and alerts instantly — to the right person, at the right time.' },
   ]
 
   return (
@@ -542,19 +536,18 @@ export function HowItWorks() {
     </section>
   )
 }
- impact-section.tsx
-    "use client"
 
-import { animate, useMotionValue } from "framer-motion"
-import { useEffect, useState } from "react"
-import { Reveal, SectionHeader, useCountInView } from "./primitives"
+ impact-section.tsx
+    import { animate, useMotionValue } from 'framer-motion'
+import { useEffect, useState } from 'react'
+import { Reveal, SectionHeader, useCountInView } from './primitives'
 
 export function ImpactSection() {
   const stats = [
-    { value: 95, suffix: "%", label: "Less Processing" },
-    { value: 92, suffix: "%", label: "Lower Resource Usage" },
-    { display: "Real-Time", label: "Threat Awareness" },
-    { display: "Instant", label: "Event Detection" },
+    { value: 95, suffix: '%', label: 'Less Processing' },
+    { value: 92, suffix: '%', label: 'Lower Resource Usage' },
+    { display: 'Real-Time', label: 'Threat Awareness' },
+    { display: 'Instant', label: 'Event Detection' },
   ]
   return (
     <section className="relative py-28 md:py-32 px-6">
@@ -605,7 +598,7 @@ function StatCard({
 function Counter({ to }: { to: number }) {
   const { ref, inView } = useCountInView()
   const mv = useMotionValue(0)
-  const [display, setDisplay] = useState("0")
+  const [display, setDisplay] = useState('0')
 
   useEffect(() => {
     if (!inView) return
@@ -620,12 +613,11 @@ function Counter({ to }: { to: number }) {
   return <span ref={ref}>{display}</span>
 }
 
-live experience.tsx
-"use client"
 
-import { motion } from "framer-motion"
-import { Activity, AlertTriangle, Camera, Circle, Clock, MapPin, ShieldCheck, Zap } from "lucide-react"
-import { Reveal, SectionHeader } from "./primitives"
+live experience.tsx
+ import { motion } from 'framer-motion'
+import { Activity, AlertTriangle, Camera, Circle, Clock, MapPin, ShieldCheck, Zap } from 'lucide-react'
+import { Reveal, SectionHeader } from './primitives'
 
 export function LiveExperience() {
   return (
@@ -676,10 +668,10 @@ function Dashboard() {
           </div>
           <div className="grid grid-cols-2 gap-2 p-3">
             {[
-              { id: "NORTH·01", state: "idle", label: "Perimeter — North" },
-              { id: "LOBBY·02", state: "alert", label: "Main Lobby" },
-              { id: "SVC·03", state: "idle", label: "Service Corridor" },
-              { id: "DOCK·04", state: "idle", label: "Loading Dock" },
+              { id: 'NORTH·01', state: 'idle', label: 'Perimeter — North' },
+              { id: 'LOBBY·02', state: 'alert', label: 'Main Lobby' },
+              { id: 'SVC·03', state: 'idle', label: 'Service Corridor' },
+              { id: 'DOCK·04', state: 'idle', label: 'Loading Dock' },
             ].map((cam) => (
               <CamTile key={cam.id} {...cam} />
             ))}
@@ -701,21 +693,21 @@ function Dashboard() {
 }
 
 function CamTile({ id, state, label }: { id: string; state: string; label: string }) {
-  const alert = state === "alert"
+  const alert = state === 'alert'
   return (
     <div
-      className={`relative aspect-video rounded-xl overflow-hidden border ${alert ? "border-violet/50" : "border-white/5"}`}
+      className={`relative aspect-video rounded-xl overflow-hidden border ${alert ? 'border-violet/50' : 'border-white/5'}`}
     >
       <div className="absolute inset-0 bg-gradient-to-br from-cyber/10 via-transparent to-violet/15" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,oklch(1_0_0/0.05),transparent_60%)]" />
       <motion.div
         className="absolute inset-x-0 h-px bg-gradient-to-r from-transparent via-cyber to-transparent"
         animate={{ y: [0, 200, 0] }}
-        transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+        transition={{ duration: 4, repeat: Infinity, ease: 'linear' }}
       />
       <div className="absolute top-2 left-2 right-2 flex items-center justify-between text-[10px] font-mono tracking-wider">
         <span className="text-white/70">{id}</span>
-        <span className={alert ? "text-violet" : "text-white/40"}>{alert ? "● EVENT" : "○ IDLE"}</span>
+        <span className={alert ? 'text-violet' : 'text-white/40'}>{alert ? '● EVENT' : '○ IDLE'}</span>
       </div>
       {alert && (
         <motion.div
@@ -760,7 +752,7 @@ function ThreatRow({
   label: string
   loc: string
   level: number
-  color: "cyber" | "violet"
+  color: 'cyber' | 'violet'
 }) {
   return (
     <div>
@@ -777,8 +769,8 @@ function ThreatRow({
           initial={{ width: 0 }}
           whileInView={{ width: `${level}%` }}
           viewport={{ once: true }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
-          className={`h-full rounded-full ${color === "violet" ? "bg-violet" : "bg-cyber"}`}
+          transition={{ duration: 1.2, ease: 'easeOut' }}
+          className={`h-full rounded-full ${color === 'violet' ? 'bg-violet' : 'bg-cyber'}`}
         />
       </div>
     </div>
@@ -815,10 +807,10 @@ function SavingsPanel() {
 
 function EventsPanel() {
   const events = [
-    { t: "14:02:31", e: "Person detected", loc: "Lobby", k: "violet" },
-    { t: "13:48:09", e: "Vehicle arrival", loc: "Dock", k: "cyber" },
-    { t: "13:31:55", e: "Door opened", loc: "Service", k: "cyber" },
-    { t: "13:12:02", e: "Idle baseline", loc: "All", k: "muted" },
+    { t: '14:02:31', e: 'Person detected', loc: 'Lobby', k: 'violet' },
+    { t: '13:48:09', e: 'Vehicle arrival', loc: 'Dock', k: 'cyber' },
+    { t: '13:31:55', e: 'Door opened', loc: 'Service', k: 'cyber' },
+    { t: '13:12:02', e: 'Idle baseline', loc: 'All', k: 'muted' },
   ]
   return (
     <div className="rounded-2xl bg-black/40 border border-white/5 p-4">
@@ -833,7 +825,7 @@ function EventsPanel() {
           <div key={ev.t} className="flex items-center gap-3 text-xs py-2 border-b border-white/5 last:border-0">
             <span
               className={`w-1.5 h-1.5 rounded-full ${
-                ev.k === "violet" ? "bg-violet" : ev.k === "cyber" ? "bg-cyber" : "bg-white/30"
+                ev.k === 'violet' ? 'bg-violet' : ev.k === 'cyber' ? 'bg-cyber' : 'bg-white/30'
               }`}
             />
             <span className="font-mono text-muted-foreground tabular-nums">{ev.t}</span>
@@ -870,7 +862,7 @@ function ActivityPanel() {
           initial={{ pathLength: 0 }}
           whileInView={{ pathLength: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 2, ease: "easeOut" }}
+          transition={{ duration: 2, ease: 'easeOut' }}
         />
         <path
           d="M0,60 L20,58 L40,62 L55,30 L60,18 L70,55 L90,62 L110,60 L125,25 L135,40 L160,62 L180,60 L200,58 L200,80 L0,80 Z"
@@ -894,19 +886,18 @@ function ActivityPanel() {
     </div>
   )
 }
- nav.tsx
-"use client"
 
-import { useEffect, useState } from "react"
-import { ArrowRight, Brain, Menu, X } from "lucide-react"
-import { motion, AnimatePresence } from "framer-motion"
+ nav.tsx
+ import { useEffect, useState } from 'react'
+import { ArrowRight, Brain, Menu, X } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
 
 const LINKS = [
-  { href: "#problem", label: "Problem" },
-  { href: "#breakthrough", label: "Breakthrough" },
-  { href: "#how", label: "How it works" },
-  { href: "#applications", label: "Applications" },
-  { href: "#vision", label: "Vision" },
+  { href: '#problem', label: 'Problem' },
+  { href: '#breakthrough', label: 'Breakthrough' },
+  { href: '#how', label: 'How it works' },
+  { href: '#applications', label: 'Applications' },
+  { href: '#vision', label: 'Vision' },
 ]
 
 export function Nav() {
@@ -916,18 +907,18 @@ export function Nav() {
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
     onScroll()
-    window.addEventListener("scroll", onScroll, { passive: true })
-    return () => window.removeEventListener("scroll", onScroll)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${scrolled ? "py-3" : "py-5"}`}
+      className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${scrolled ? 'py-3' : 'py-5'}`}
     >
       <div className="mx-auto max-w-7xl px-4 md:px-6">
         <div
           className={`flex items-center justify-between rounded-full px-4 md:px-5 py-2.5 transition-all duration-500 ${
-            scrolled ? "glass-strong shadow-elevated" : ""
+            scrolled ? 'glass-strong shadow-elevated' : ''
           }`}
         >
           <a href="#" className="flex items-center gap-2.5">
@@ -958,7 +949,7 @@ export function Nav() {
               type="button"
               onClick={() => setOpen((v) => !v)}
               className="md:hidden grid place-items-center w-9 h-9 rounded-full glass text-foreground"
-              aria-label={open ? "Close menu" : "Open menu"}
+              aria-label={open ? 'Close menu' : 'Open menu'}
             >
               {open ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
             </button>
@@ -1009,12 +1000,9 @@ export function LogoMark() {
 }
 
 background.tsx 
-"use client"
+ import { motion } from 'framer-motion'
+import { useEffect, useMemo, useState } from 'react'
 
-import { motion } from "framer-motion"
-import { useEffect, useMemo, useState } from "react"
-
-/* Animated neural network background with flowing particles + pathways */
 export function NeuralBackground() {
   return (
     <div className="absolute inset-0 -z-10 overflow-hidden">
@@ -1022,7 +1010,6 @@ export function NeuralBackground() {
       <div className="absolute inset-0 bg-grid opacity-40 [mask-image:radial-gradient(ellipse_at_center,black_0%,transparent_70%)]" />
       <NeuralSvg />
       <Particles count={36} />
-      {/* surveillance corner brackets */}
       <div className="absolute top-32 left-6 md:left-10 w-20 h-20 md:w-24 md:h-24 border-l-2 border-t-2 border-cyber/25 rounded-tl-2xl" />
       <div className="absolute bottom-20 right-6 md:right-10 w-20 h-20 md:w-24 md:h-24 border-r-2 border-b-2 border-violet/25 rounded-br-2xl" />
       <div className="hidden sm:block absolute top-40 right-16 text-[10px] font-mono text-cyber/50 tracking-widest">
@@ -1031,7 +1018,6 @@ export function NeuralBackground() {
       <div className="hidden sm:block absolute bottom-32 left-16 text-[10px] font-mono text-violet/50 tracking-widest">
         STATE ▸ FOCUSED
       </div>
-      {/* fade into next section */}
       <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-background" />
     </div>
   )
@@ -1078,8 +1064,8 @@ function NeuralSvg() {
             transition={{
               duration: 4 + (i % 3),
               delay: i * 0.15,
-              repeat: Number.POSITIVE_INFINITY,
-              repeatType: "reverse",
+              repeat: Infinity,
+              repeatType: 'reverse',
             }}
           />
         )),
@@ -1092,7 +1078,7 @@ function NeuralSvg() {
           r="0.6"
           fill="url(#nNode)"
           animate={{ opacity: [0.3, 1, 0.3] }}
-          transition={{ duration: 3, delay: i * 0.2, repeat: Number.POSITIVE_INFINITY }}
+          transition={{ duration: 3, delay: i * 0.2, repeat: Infinity }}
         />
       ))}
     </svg>
@@ -1100,7 +1086,6 @@ function NeuralSvg() {
 }
 
 export function Particles({ count = 30 }: { count?: number }) {
-  // Render only after mount so the random layout never mismatches the server HTML.
   const [mounted, setMounted] = useState(false)
   useEffect(() => setMounted(true), [])
 
@@ -1114,7 +1099,7 @@ export function Particles({ count = 30 }: { count?: number }) {
           top: Math.random() * 100,
           dur: 10 + Math.random() * 20,
           delay: Math.random() * -20,
-          color: Math.random() > 0.5 ? "var(--cyber)" : "var(--violet)",
+          color: Math.random() > 0.5 ? 'var(--cyber)' : 'var(--violet)',
           opacity: 0.4 + Math.random() * 0.5,
         }
       }),
@@ -1132,7 +1117,7 @@ export function Particles({ count = 30 }: { count?: number }) {
             height: p.size,
             left: `${p.left}%`,
             top: `${p.top}%`,
-            background: "oklch(0.85 0.18 250)",
+            background: 'oklch(0.85 0.18 250)',
             boxShadow: `0 0 ${p.size * 4}px ${p.color}`,
             opacity: p.opacity,
             animationDuration: `${p.dur}s`,
@@ -1144,28 +1129,28 @@ export function Particles({ count = 30 }: { count?: number }) {
   )
 }
 
+
               primitives.tsx
-              "use client"
+               import { motion, useInView } from 'framer-motion'
+import { useRef, type ReactNode } from 'react'
 
-import { motion, useInView } from "framer-motion"
-import { useRef, type ReactNode } from "react"
-
-/* Section header with eyebrow + gradient title */
 export function SectionHeader({
   eyebrow,
   title,
   description,
-  align = "center",
+  align = 'center',
 }: {
   eyebrow?: string
   title: ReactNode
   description?: ReactNode
-  align?: "center" | "left"
+  align?: 'center' | 'left'
 }) {
   return (
-    <div className={`max-w-3xl ${align === "center" ? "mx-auto text-center" : ""}`}>
+    <div className={`max-w-3xl ${align === 'center' ? 'mx-auto text-center' : ''}`}>
       {eyebrow && (
-        <div className="text-xs uppercase tracking-[0.25em] text-cyber mb-4 font-mono">{eyebrow}</div>
+        <div className="text-xs uppercase tracking-[0.25em] text-cyber mb-4 font-mono">
+          {eyebrow}
+        </div>
       )}
       <h2 className="text-balance font-display font-semibold tracking-tighter text-4xl md:text-6xl leading-[1.04]">
         {title}
@@ -1179,7 +1164,6 @@ export function SectionHeader({
   )
 }
 
-/* Scroll reveal wrapper */
 export function Reveal({
   children,
   delay = 0,
@@ -1194,7 +1178,7 @@ export function Reveal({
       className={className}
       initial={{ opacity: 0, y: 32 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
+      viewport={{ once: true, margin: '-80px' }}
       transition={{ duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] }}
     >
       {children}
@@ -1202,26 +1186,24 @@ export function Reveal({
   )
 }
 
-/* Animated count-up that respects in-view */
 export function useCountInView() {
   const ref = useRef<HTMLSpanElement>(null)
-  const inView = useInView(ref, { once: true, margin: "-50px" })
+  const inView = useInView(ref, { once: true, margin: '-50px' })
   return { ref, inView }
 }
 
-problem-section.tsx
-  "use client"
 
-import { motion } from "framer-motion"
-import { Activity, Camera, Cpu, Radar, Zap } from "lucide-react"
-import { Reveal, SectionHeader } from "./primitives"
+problem-section.tsx
+  import { motion } from 'framer-motion'
+import { Activity, Camera, Cpu, Radar, Zap } from 'lucide-react'
+import { Reveal, SectionHeader } from './primitives'
 
 export function ProblemSection() {
   const items = [
-    { icon: <Cpu className="w-5 h-5" />, title: "Wasted Computation", text: "Endless cycles spent analyzing empty frames where nothing happens." },
-    { icon: <Zap className="w-5 h-5" />, title: "Wasted Energy", text: "Always-on intelligence consumes power 24/7 — most of it for nothing." },
-    { icon: <Activity className="w-5 h-5" />, title: "Noise Over Signal", text: "Critical events drown in oceans of irrelevant data." },
-    { icon: <Radar className="w-5 h-5" />, title: "Scale Breaks Down", text: "Every new camera multiplies cost. Growth becomes a liability." },
+    { icon: <Cpu className="w-5 h-5" />, title: 'Wasted Computation', text: 'Endless cycles spent analyzing empty frames where nothing happens.' },
+    { icon: <Zap className="w-5 h-5" />, title: 'Wasted Energy', text: 'Always-on intelligence consumes power 24/7 — most of it for nothing.' },
+    { icon: <Activity className="w-5 h-5" />, title: 'Noise Over Signal', text: 'Critical events drown in oceans of irrelevant data.' },
+    { icon: <Radar className="w-5 h-5" />, title: 'Scale Breaks Down', text: 'Every new camera multiplies cost. Growth becomes a liability.' },
   ]
 
   return (
@@ -1245,7 +1227,7 @@ export function ProblemSection() {
               <div className="relative">
                 <div className="text-xs uppercase tracking-widest text-muted-foreground mb-6 font-mono">// Today</div>
                 <div className="space-y-3">
-                  {["02:14:09", "02:14:10", "02:14:11", "02:14:12", "02:14:13", "02:14:14"].map((t) => (
+                  {['02:14:09', '02:14:10', '02:14:11', '02:14:12', '02:14:13', '02:14:14'].map((t) => (
                     <div key={t} className="flex items-center gap-3 text-sm font-mono text-muted-foreground/70">
                       <Camera className="w-3.5 h-3.5" />
                       <span className="tabular-nums">{t}</span>
@@ -1284,10 +1266,9 @@ export function ProblemSection() {
     </section>
   )
 }
- why it matters.tsx
-   "use client"
 
-import { Reveal } from "./primitives"
+ why it matters.tsx
+   import { Reveal } from './primitives'
 
 export function WhyItMatters() {
   return (
@@ -1325,9 +1306,7 @@ export function WhyItMatters() {
                 <p className="text-2xl font-display font-medium leading-snug">
                   We focus only on <span className="text-brand-gradient">what matters</span>.
                 </p>
-                <p className="mt-4 text-muted-foreground">
-                  Smarter. Faster. More efficient. The future of intelligent monitoring.
-                </p>
+                <p className="mt-4 text-muted-foreground">Smarter. Faster. More efficient. The future of intelligent monitoring.</p>
               </div>
             </div>
           </Reveal>
@@ -1336,5 +1315,3 @@ export function WhyItMatters() {
     </section>
   )
 }
-
-
