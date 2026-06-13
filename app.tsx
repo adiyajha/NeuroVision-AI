@@ -253,7 +253,7 @@
     scroll-behavior: auto !important;
   }
 }
-/*--------------------LAYOUT.tsx----------------------/*
+/*--------------------layout.tsx----------------------/*
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import { Geist, Geist_Mono, Space_Grotesk } from 'next/font/google'
@@ -303,7 +303,7 @@ export default function RootLayout({
     </html>
   )
 }
-/*------------------------------PAGE.tsx-------------/*
+/*---------------page.tsx----------------/*
 import { Nav } from "@/components/nav"
 import { Hero } from "@/components/hero"
 import { ProblemSection } from "@/components/problem-section"
