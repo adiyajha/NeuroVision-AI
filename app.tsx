@@ -253,6 +253,89 @@
     scroll-behavior: auto !important;
   }
 }
+/*--------------------LAYOUT.tsx----------------------/*
+import { Analytics } from '@vercel/analytics/next'
+import type { Metadata, Viewport } from 'next'
+import { Geist, Geist_Mono, Space_Grotesk } from 'next/font/google'
+import './globals.css'
+
+const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] })
+const geistMono = Geist_Mono({
+  variable: '--font-geist-mono',
+  subsets: ['latin'],
+})
+const spaceGrotesk = Space_Grotesk({
+  variable: '--font-display',
+  subsets: ['latin'],
+  weight: ['500', '600', '700'],
+})
+
+export const metadata: Metadata = {
+  title: 'NeuroVision AI — Intelligence That Activates Only When It Matters',
+  description:
+    'Brain-inspired AI that activates only when meaningful events occur. 95% less processing. Real-time awareness. The future of event-driven intelligence.',
+  generator: 'v0.app',
+  openGraph: {
+    title: 'NeuroVision AI',
+    description: 'Intelligence that activates only when it matters.',
+  },
+}
+
+export const viewport: Viewport = {
+  colorScheme: 'dark',
+  themeColor: '#0b0f1a',
+}
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode
+}>) {
+  return (
+    <html
+      lang="en"
+      className={`dark ${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable} bg-background`}
+    >
+      <body className="font-sans antialiased">
+        {children}
+        {process.env.NODE_ENV === 'production' && <Analytics />}
+      </body>
+    </html>
+  )
+}
+/*------------------------------PAGE.tsx-------------/*
+import { Nav } from "@/components/nav"
+import { Hero } from "@/components/hero"
+import { ProblemSection } from "@/components/problem-section"
+import { BreakthroughSection } from "@/components/breakthrough-section"
+import { HowItWorks } from "@/components/how-it-works"
+import { LiveExperience } from "@/components/live-experience"
+import { ImpactSection } from "@/components/impact-section"
+import { ApplicationsSection } from "@/components/applications-section"
+import { WhyItMatters } from "@/components/why-it-matters"
+import { FutureVision } from "@/components/future-vision"
+import { FinalCTA, Footer } from "@/components/cta-footer"
+
+export default function NeuroVisionLanding() {
+  return (
+    <main className="relative min-h-screen overflow-x-clip bg-background text-foreground">
+      <Nav />
+      <Hero />
+      <ProblemSection />
+      <BreakthroughSection />
+      <HowItWorks />
+      <LiveExperience />
+      <ImpactSection />
+      <ApplicationsSection />
+      <WhyItMatters />
+      <FutureVision />
+      <FinalCTA />
+      <Footer />
+    </main>
+  )
+}
+
+
  
  
 
