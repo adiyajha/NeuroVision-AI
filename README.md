@@ -85,7 +85,77 @@ API docs: http://localhost:8000/docs
 - `alert_system.py` — Multi-channel alerts
 - `metrics.py` — Performance tracking
 
-## Deployment
+## Deployment (Step-by-Step)
+
+### Step 1 — Push to GitHub
+
+If the repo is not on GitHub yet:
+
+1. Go to [github.com/new](https://github.com/new) and create a repo named `neurovision-ai` (no README).
+2. In PowerShell, run:
+
+```powershell
+cd "C:\Users\hp\OneDrive\ドキュメント\GitHub\neurovision-ai"
+git remote add origin https://github.com/YOUR_USERNAME/neurovision-ai.git
+git push -u origin main
+```
+
+Replace `YOUR_USERNAME` with your GitHub username.
+
+---
+
+### Step 2 — Deploy Backend (Railway)
+
+1. Go to [railway.app](https://railway.app) → **New Project** → **Deploy from GitHub repo**
+2. Select `neurovision-ai`
+3. Set **Root Directory** to `backend`
+4. Add **Variables**:
+
+| Variable | Value |
+|----------|-------|
+| `CORS_ORIGINS` | `https://YOUR-VERCEL-URL.vercel.app` (update after Step 3) |
+| `DATABASE_URL` | `sqlite:///./neurovision.db` |
+| `MOCK_EVENT_INTERVAL` | `5.0` |
+
+5. Deploy → copy your public URL, e.g. `https://neurovision-ai-production.up.railway.app`
+6. Test: open `https://YOUR-BACKEND-URL/health` — should return `"status": "healthy"`
+
+---
+
+### Step 3 — Deploy Frontend (Vercel)
+
+1. Go to [vercel.com/new](https://vercel.com/new) → **Import** your GitHub repo
+2. Set **Root Directory** to `frontend`
+3. Add **Environment Variables**:
+
+| Variable | Value |
+|----------|-------|
+| `VITE_API_URL` | `https://YOUR-BACKEND-URL.up.railway.app` |
+| `VITE_WS_URL` | `wss://YOUR-BACKEND-URL.up.railway.app/ws/events` |
+
+4. Click **Deploy**
+5. Copy your Vercel URL, e.g. `https://neurovision-ai.vercel.app`
+
+---
+
+### Step 4 — Connect Frontend ↔ Backend
+
+1. Go back to **Railway** → update `CORS_ORIGINS` to your Vercel URL
+2. Redeploy Railway (or wait for auto-restart)
+3. Open your Vercel URL → go to `/dashboard` → status should show **WS LIVE**
+
+---
+
+### Alternative: Render (Backend)
+
+Use the included `backend/render.yaml` blueprint, or create a Web Service with:
+- **Root Directory:** `backend`
+- **Build:** `pip install -r requirements.txt`
+- **Start:** `uvicorn main:app --host 0.0.0.0 --port $PORT`
+
+---
+
+## Deployment (Quick Reference)
 
 ### Frontend → Vercel
 
