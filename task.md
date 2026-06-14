@@ -1,0 +1,24 @@
+# NeuroVision AI Landing Page Tasks
+
+- [x] Create project directory and configure boilerplate (`neurovision-ai/`)
+- [x] Implement UI design tokens, core resets, and glassmorphism styles (`styles.css`)
+- [x] Create main layout HTML with all content sections (`index.html`)
+  - [x] Navbar & Hero section (with statistics cards)
+  - [x] Problem comparison section (with animated infographic)
+  - [x] Solution flow section (with camera-wake diagram)
+  - [x] Human Brain analogy section
+  - [x] Interactive Architecture node diagram
+  - [x] Technology Stack & Core Modules grid (10 cards)
+  - [x] Neuromorphic Intelligence & Workflows timeline
+  - [x] Benefits (charts/counters) & Applications grid
+  - [x] Live Dashboard Mockup preview
+  - [x] Future Roadmap & Why NeuroVision AI comparison table
+  - [x] Final Pitch & Footer
+- [x] Write dynamic interactive scripts (`app.js`)
+  - [x] Canvas-based animated neural network/particle background
+  - [x] Dynamic scroll transitions and count-up numbers
+  - [x] Interactive architecture node click/hover console logger
+  - [x] Live-updating dashboard preview simulation (events ticker, camera feed logs, skipped frame counters, CPU loads)
+  - [x] Chart.js integration for system comparisons
+- [/] Verify responsiveness and visual excellence on mobile/desktop
+- [/] Create walkthrough documentation

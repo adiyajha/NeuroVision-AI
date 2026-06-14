@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NeuroVision AI - Event-Driven Smart Surveillance System</title>
+  
+  <!-- Meta tags for SEO -->
+  <meta name="description" content="NeuroVision AI is a neuromorphic event-driven surveillance system inspired by human intelligence. It reduces CPU usage by 92% by only processing active events.">
+  <meta name="keywords" content="Surveillance, Neuromorphic computing, AI Security, Event-Driven, OpenCV, YOLOv8, Smart CCTV">
+  <meta name="author" content="NeuroVision AI Team">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Background Canvas for Neural Network -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg custom-navbar fixed-top">
+    <div class="container">
+      <a class="navbar-brand text-gradient navbar-brand-text d-flex align-items-center" href="#">
+        <i class="fa-solid fa-eye me-2 text-gradient"></i>NEUROVISION AI
+      </a>
+      <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fa-solid fa-bars"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="#hero">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#problem">Problem</a></li>
+          <li class="nav-item"><a class="nav-link" href="#solution">Solution</a></li>
+          <li class="nav-item"><a class="nav-link" href="#architecture">Architecture</a></li>
+          <li class="nav-item"><a class="nav-link" href="#modules">Modules</a></li>
+          <li class="nav-item"><a class="nav-link" href="#dashboard">Dashboard</a></li>
+          <li class="nav-item"><a class="nav-link" href="#benefits">Benefits</a></li>
+          <li class="nav-item"><a class="nav-link" href="#roadmap">Roadmap</a></li>
+        </ul>
+        <div class="ms-lg-3 mt-2 mt-lg-0">
+          <a href="#dashboard" class="btn btn-neon btn-neon-solid">Demo Feed</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <!-- Hero Details -->
+        <div class="col-lg-6 mb-5 mb-lg-0 reveal-element">
+          <span class="section-subtitle">NeuroVision AI</span>
+          <h1 class="display-4 fw-extrabold mb-3">
+            Event-Driven Smart Surveillance Inspired by <span class="text-gradient">Neuromorphic Computing</span>
+          </h1>
+          <p class="lead text-secondary mb-4">
+            Traditional CCTV systems waste enormous computational power by processing every frame continuously. NeuroVision AI mimics the human brain by activating intelligence only when meaningful events occur.
+          </p>
+          <div class="d-flex flex-wrap gap-3 mb-5">
+            <a href="#dashboard" class="btn btn-neon">Watch Demo</a>
+            <a href="#architecture" class="btn btn-neon btn-neon-purple">Explore Architecture</a>
+          </div>
+        </div>
+        
+        <!-- Hero Stats Cards -->
+        <div class="col-lg-6">
+          <div class="row g-4 reveal-element reveal-delay-2">
+            <div class="col-6">
+              <div class="hero-stats-card glass-card">
+                <div class="hero-stat-value text-gradient">95%</div>
+                <div class="hero-stat-label">Processing Reduction</div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="hero-stats-card glass-card glass-card-purple">
+                <div class="hero-stat-value text-gradient">92%</div>
+                <div class="hero-stat-label">CPU Savings</div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="hero-stats-card glass-card glass-card-purple">
+                <div class="hero-stat-value text-gradient"><i class="fa-solid fa-bolt me-1 text-warning"></i>Real-Time</div>
+                <div class="hero-stat-label">Threat Alerts</div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="hero-stats-card glass-card">
+                <div class="hero-stat-value text-gradient">Active</div>
+                <div class="hero-stat-label">Spike Detection</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem Section -->
+  <section id="problem">
+    <div class="container">
+      <div class="section-title-container text-center reveal-element">
+        <span class="section-subtitle">Surveillance Bottleneck</span>
+        <h2 class="h1">The Problem with Traditional CCTV</h2>
+        <p class="text-secondary max-width-600 mx-auto">Standard cameras are dumb capture devices that stream pixel feeds indiscriminately, creating severe computational waste.</p>
+      </div>
+      
+      <div class="row g-4 align-items-center">
+        <!-- Infographic representation -->
+        <div class="col-lg-6 order-lg-2 reveal-element">
+          <div class="glass-card problem-card h-100">
+            <h4 class="mb-4 text-gradient"><i class="fa-solid fa-clock-rotate-left me-2"></i>Wasted Frame Math</h4>
+            <p class="text-secondary">A standard security camera processes frames nonstop, even in a locked room over the weekend.</p>
+            
+            <div class="fps-metric-box my-4">
+              <div class="fps-metric-value">108,000</div>
+              <div class="text-secondary small text-uppercase font-mono">Frames Wasted Per Hour (per camera at 30 FPS)</div>
+            </div>
+            
+            <div class="counter-flow-grid">
+              <div class="text-center p-2 rounded bg-dark border border-secondary border-opacity-10">
+                <h6 class="mb-0 font-mono text-white">30 FPS</h6>
+                <span class="text-muted small">Standard Rate</span>
+              </div>
+              <div class="text-center p-2 rounded bg-dark border border-secondary border-opacity-10">
+                <h6 class="mb-0 font-mono text-white">× 60s</h6>
+                <span class="text-muted small">One Minute</span>
+              </div>
+              <div class="text-center p-2 rounded bg-dark border border-secondary border-opacity-10">
+                <h6 class="mb-0 font-mono text-white">× 60m</h6>
+                <span class="text-muted small">One Hour</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Bullet Comparison points -->
+        <div class="col-lg-6 order-lg-1 reveal-element reveal-delay-2">
+          <div class="pe-lg-5">
+            <h3 class="mb-4">Why standard setups fail at scale</h3>
+            <ul class="list-unstyled">
+              <li class="d-flex mb-4">
+                <i class="fa-solid fa-circle-xmark text-danger fs-4 me-3 mt-1"></i>
+                <div>
+                  <h5>Continuous Frame Processing</h5>
+                  <p class="text-secondary mb-0">Analyzes millions of identical static background pixels, stressing storage and backend processors.</p>
+                </div>
+              </li>
+              <li class="d-flex mb-4">
+                <i class="fa-solid fa-circle-xmark text-danger fs-4 me-3 mt-1"></i>
+                <div>
+                  <h5>High CPU & Memory Usage</h5>
+                  <p class="text-secondary mb-0">Demands high-performance servers running GPUs continuously just to inspect empty halls.</p>
+                </div>
+              </li>
+              <li class="d-flex mb-4">
+                <i class="fa-solid fa-circle-xmark text-danger fs-4 me-3 mt-1"></i>
+                <div>
+                  <h5>Extreme Power Consumption</h5>
+                  <p class="text-secondary mb-0">Continuous workload increases thermal output and electricity expenses across server racks.</p>
+                </div>
+              </li>
+              <li class="d-flex mb-4">
+                <i class="fa-solid fa-circle-xmark text-danger fs-4 me-3 mt-1"></i>
+                <div>
+                  <h5>Latency & Scalability Issues</h5>
+                  <p class="text-secondary mb-0">Network pipelines clog when dozens of streams overload central servers simultaneously.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solution Section -->
+  <section id="solution" class="bg-secondary bg-opacity-50">
+    <div class="container">
+      <div class="section-title-container text-center reveal-element">
+        <span class="section-subtitle">Our Solution</span>
+        <h2 class="h1">Our Brain-Inspired Solution</h2>
+        <p class="text-secondary max-width-600 mx-auto">NeuroVision AI shifts the paradigm from continuous polling to event-driven spike detection.</p>
+      </div>
+      
+      <div class="row g-5 align-items-center">
+        <!-- Traditional flow -->
+        <div class="col-md-6 reveal-element">
+          <div class="glass-card problem-card h-100">
+            <h4 class="mb-4 text-gradient"><i class="fa-solid fa-triangle-exclamation me-2"></i>Traditional Flow</h4>
+            <div class="flow-diagram-container">
+              <div class="flow-step">
+                <div class="step-number">01</div>
+                <div class="step-icon text-muted"><i class="fa-solid fa-video"></i></div>
+                <div class="step-details">
+                  <h5>CCTV Camera</h5>
+                  <p>Streams pixel feed continuously</p>
+                </div>
+              </div>
+              <div class="flow-arrow"><i class="fa-solid fa-arrow-down-long"></i></div>
+              <div class="flow-step">
+                <div class="step-number">02</div>
+                <div class="step-icon text-muted"><i class="fa-solid fa-microchip"></i></div>
+                <div class="step-details">
+                  <h5>Process All Frames</h5>
+                  <p>CPU decodes and processes 30 FPS</p>
+                </div>
+              </div>
+              <div class="flow-arrow"><i class="fa-solid fa-arrow-down-long"></i></div>
+              <div class="flow-step">
+                <div class="step-number">03</div>
+                <div class="step-icon text-muted"><i class="fa-solid fa-brain"></i></div>
+                <div class="step-details">
+                  <h5>AI Runs Non-Stop</h5>
+                  <p>YOLO runs on 100% of frames</p>
+                </div>
+              </div>
+              <div class="flow-arrow"><i class="fa-solid fa-arrow-down-long"></i></div>
+              <div class="flow-step bg-danger bg-opacity-10 border-danger border-opacity-20">
+                <div class="step-number text-danger">04</div>
+                <div class="step-icon text-danger"><i class="fa-solid fa-fire-flame-curved"></i></div>
+                <div class="step-details">
+                  <h5 class="text-danger">High Resource Draw</h5>
+                  <p class="text-danger-emphasis">Extreme thermal, power, and bandwidth load</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- NeuroVision flow -->
+        <div class="col-md-6 reveal-element reveal-delay-2">
+          <div class="glass-card solution-flow-card h-100">
+            <h4 class="mb-4 text-gradient"><i class="fa-solid fa-brain me-2"></i>NeuroVision AI Pipeline</h4>
+            <div class="flow-diagram-container">
+              <div class="flow-step active-step">
+                <div class="step-number">01</div>
+                <div class="step-icon"><i class="fa-solid fa-video"></i></div>
+                <div class="step-details">
+                  <h5>Camera Feed</h5>
+                  <p>Stream monitored by low-power stream listener</p>
+                </div>
+              </div>
+              <div class="flow-arrow"><i class="fa-solid fa-arrow-down-long text-success"></i></div>
+              <div class="flow-step active-step">
+                <div class="step-number">02</div>
+                <div class="step-icon"><i class="fa-solid fa-wave-square"></i></div>
+                <div class="step-details">
+                  <h5>Motion Spike Trigger</h5>
+                  <p>Hardware/OpenCV identifies pixel spikes</p>
+                </div>
+              </div>
+              <div class="flow-arrow"><i class="fa-solid fa-arrow-down-long text-success"></i></div>
+              <div class="flow-step active-step">
+                <div class="step-number">03</div>
+                <div class="step-icon"><i class="fa-solid fa-bolt"></i></div>
+                <div class="step-details">
+                  <h5>Wake AI Core</h5>
+                  <p>Threat detection models spin up asynchronously</p>
+                </div>
+              </div>
+              <div class="flow-arrow"><i class="fa-solid fa-arrow-down-long text-success"></i></div>
+              <div class="flow-step sleep-step">
+                <div class="step-number text-info">04</div>
+                <div class="step-icon"><i class="fa-solid fa-moon"></i></div>
+                <div class="step-details">
+                  <h5>Sleep Mode</h5>
+                  <p>Returns to low-power listening post-event</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-5 reveal-element">
+        <p class="lead text-gradient fw-bold font-mono">"AI Core operates selectively - waking only on significant environment delta."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Human Brain Inspiration Section -->
+  <section id="brain">
+    <div class="container">
+      <div class="section-title-container text-center reveal-element">
+        <span class="section-subtitle">Cognitive Parallel</span>
+        <h2 class="h1">Inspired by Human Intelligence</h2>
+        <p class="text-secondary max-width-600 mx-auto">How the human brain optimizes raw inputs to operate under a low metabolic energy limit.</p>
+      </div>
+      
+      <div class="row align-items-center g-5">
+        <!-- Visualization mockup -->
+        <div class="col-lg-5 reveal-element">
+          <div class="glass-card text-center p-4">
+            <h4 class="mb-4">Sensory Attention Selection</h4>
+            <div class="position-relative d-inline-block mb-3">
+              <i class="fa-solid fa-brain text-gradient" style="font-size: 8rem; filter: drop-shadow(0 0 15px rgba(138, 43, 226, 0.4));"></i>
+              <span class="position-absolute top-50 start-50 translate-middle font-mono fw-extrabold text-white fs-4">98% SILENT</span>
+            </div>
+            <p class="text-secondary small font-mono mt-2">Sensory neurons discard redundant stimuli at the periphery before firing signals to the cortex.</p>
+          </div>
+        </div>
+        
+        <!-- Explanation details -->
+        <div class="col-lg-7 reveal-element reveal-delay-2">
+          <h3 class="mb-4">Sparse Sensory Activation</h3>
+          <p class="text-secondary mb-4">
+            Imagine a student studying in a library. Their sensory organs receive constant physical waveforms: a humming ceiling fan, the ticking clock, ambient rustles. 
+          </p>
+          <p class="text-secondary mb-4">
+            Yet the brain registers **zero attention** to these redundant inputs. Metabolic energy is conserved until a novel event occurs—such as a door sliding open or a direct voice. At that moment, the brain fires a neural spike, wakes the cognitive core, and makes decisions.
+          </p>
+          
+          <div class="row g-4 mt-2">
+            <div class="col-md-6">
+              <div class="p-3 rounded bg-dark border border-secondary border-opacity-10">
+                <h6 class="text-gradient"><i class="fa-solid fa-filter me-2 text-danger"></i>Ignored Stimuli</h6>
+                <ul class="list-unstyled text-muted small mt-2">
+                  <li class="mb-1"><i class="fa-solid fa-circle-minus me-2"></i>Repetitive Fan hum</li>
+                  <li class="mb-1"><i class="fa-solid fa-circle-minus me-2"></i>Rhythmic Clock tick</li>
+                  <li><i class="fa-solid fa-circle-minus me-2"></i>Background noise</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="p-3 rounded bg-dark border border-secondary border-opacity-10">
+                <h6 class="text-gradient"><i class="fa-solid fa-bullseye me-2 text-success"></i>Triggered Stimuli</h6>
+                <ul class="list-unstyled text-muted small mt-2">
+                  <li class="mb-1"><i class="fa-solid fa-circle-check me-2 text-success"></i>Person entering room</li>
+                  <li class="mb-1"><i class="fa-solid fa-circle-check me-2 text-success"></i>Flickering alarm line</li>
+                  <li><i class="fa-solid fa-circle-check me-2 text-success"></i>Direct speech spike</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- System Architecture Section -->
+  <section id="architecture" class="bg-secondary bg-opacity-50">
+    <div class="container">
+      <div class="section-title-container text-center reveal-element">
+        <span class="section-subtitle">System Architecture</span>
+        <h2 class="h1">Interactive Neural Pipeline</h2>
+        <p class="text-secondary max-width-600 mx-auto">Explore how frame spikes transition from hardware capturing to async processing nodes. Click a node to view its specifications.</p>
+      </div>
+      
+      <div class="row g-5">
+        <!-- Interactive node layout column -->
+        <div class="col-lg-7 reveal-element">
+          <div class="architecture-container glass-card" id="arch-viewport">
+            <svg class="arch-svg-overlay" id="arch-lines">
+              <defs>
+                <linearGradient id="line-gradient-active" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#00f0ff" />
+                  <stop offset="100%" stop-color="#8a2be2" />
+                </linearGradient>
+              </defs>
+              <!-- Connection paths will be dynamically drawn by app.js -->
+            </svg>
+            
+            <!-- Nodes (placed absolutely inside viewport by javascript or CSS grids) -->
+            <div class="arch-node active-node" id="node-camera" style="top: 10%; left: 8%;">
+              <div class="node-title">CCTV / Phone</div>
+              <div class="node-subtitle">Camera Feed</div>
+            </div>
+            
+            <div class="arch-node" id="node-opencv" style="top: 10%; left: 42%;">
+              <div class="node-title">OpenCV Stream</div>
+              <div class="node-subtitle">Video Capture</div>
+            </div>
+            
+            <div class="arch-node" id="node-diff" style="top: 10%; left: 75%;">
+              <div class="node-title">Difference Engine</div>
+              <div class="node-subtitle">Frame Compare</div>
+            </div>
+            
+            <div class="arch-node" id="node-motion" style="top: 45%; left: 75%;">
+              <div class="node-title">Event Detector</div>
+              <div class="node-subtitle">Motion Check</div>
+            </div>
+            
+            <div class="arch-node" id="node-queue" style="top: 45%; left: 42%;">
+              <div class="node-title">Spike Queue</div>
+              <div class="node-subtitle">Event Buffer</div>
+            </div>
+            
+            <div class="arch-node" id="node-async" style="top: 45%; left: 8%;">
+              <div class="node-title">Async Processor</div>
+              <div class="node-subtitle">Event Loop</div>
+            </div>
+            
+            <div class="arch-node" id="node-yolo" style="top: 75%; left: 8%;">
+              <div class="node-title">YOLOv8 Nano</div>
+              <div class="node-subtitle">Object Classifier</div>
+            </div>
+            
+            <div class="arch-node" id="node-threat" style="top: 75%; left: 36%;">
+              <div class="node-title">Threat Analyzer</div>
+              <div class="node-subtitle">Rules Engine</div>
+            </div>
+            
+            <div class="arch-node" id="node-db" style="top: 75%; left: 66%;">
+              <div class="node-title">SQLite + DB</div>
+              <div class="node-subtitle">Event Storage</div>
+            </div>
+            
+            <div class="arch-node" id="node-dashboard" style="top: 90%; left: 36%;">
+              <div class="node-title">FastAPI Dashboard</div>
+              <div class="node-subtitle">Web UI Stream</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Specification logger column -->
+        <div class="col-lg-5 reveal-element reveal-delay-2">
+          <div class="terminal-console h-100 d-flex flex-column">
+            <div class="terminal-header">
+              <div class="terminal-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+              </div>
+              <span class="terminal-title">Diagnostic Monitor</span>
+              <span class="text-info font-mono small" id="active-node-id">camera</span>
+            </div>
+            <div class="terminal-body flex-grow-1" id="terminal-screen">
+              <div class="terminal-line text-muted">[SYSTEM] Connecting pipeline diagnosis...</div>
+              <div class="terminal-line text-success">[ACTIVE] CCTV / Phone Camera source listening.</div>
+              <div class="terminal-line text-info">&gt; Capture pipeline initialized. Ready to trace. Click on and follow nodes to inspect properties.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technology Stack Section -->
+  <section id="tech-stack">
+    <div class="container">
+      <div class="section-title-container text-center reveal-element">
+        <span class="section-subtitle">Integration Layers</span>
+        <h2 class="h1">Technology Stack</h2>
+        <p class="text-secondary max-width-600 mx-auto">Built on high-performance frameworks and models tailored for low-resource environments.</p>
+      </div>
+      
+      <div class="row g-4">
+        <!-- Card OpenCV -->
+        <div class="col-md-4 col-sm-6 reveal-element">
+          <div class="glass-card tech-card">
+            <div class="tech-icon-container"><i class="fa-solid fa-shapes"></i></div>
+            <h4 class="mb-3">OpenCV</h4>
+            <p class="text-secondary mb-0">Manages high-frequency video capture, frame decodings, and delta comparisons.</p>
+          </div>
+        </div>
+        
+        <!-- Card YOLO -->
+        <div class="col-md-4 col-sm-6 reveal-element reveal-delay-1">
+          <div class="glass-card tech-card tech-card-purple">
+            <div class="tech-icon-container"><i class="fa-solid fa-brain"></i></div>
+            <h4 class="mb-3">YOLOv8 Nano</h4>
+            <p class="text-secondary mb-0">Ultralightweight object model. Loads into RAM and executes object checks rapidly on wake triggers.</p>
+          </div>
+        </div>
+        
+        <!-- Card FastAPI -->
+        <div class="col-md-4 col-sm-6 reveal-element reveal-delay-2">
+          <div class="glass-card tech-card">
+            <div class="tech-icon-container"><i class="fa-solid fa-bolt"></i></div>
+            <h4 class="mb-3">FastAPI</h4>
+            <p class="text-secondary mb-0">Serves JSON metrics and Server-Sent Events (SSE) logs directly to dashboards with low network latency.</p>
+          </div>
+        </div>
+        
+        <!-- Card SQLite -->
+        <div class="col-md-4 col-sm-6 reveal-element">
+          <div class="glass-card tech-card tech-card-purple">
+            <div class="tech-icon-container"><i class="fa-solid fa-database"></i></div>
+            <h4 class="mb-3">SQLite</h4>
+            <p class="text-secondary mb-0">Embedded document database saving event records, confidence ratios, and local frame links.</p>
+          </div>
+        </div>
+        
+        <!-- Card asyncio -->
+        <div class="col-md-4 col-sm-6 reveal-element reveal-delay-1">
+          <div class="glass-card tech-card">
+            <div class="tech-icon-container"><i class="fa-solid fa-clock"></i></div>
+            <h4 class="mb-3">asyncio</h4>
+            <p class="text-secondary mb-0">Orchestrates multi-camera pipelines concurrently on a single thread event loop.</p>
+          </div>
+        </div>
+        
+        <!-- Card Hardware -->
+        <div class="col-md-4 col-sm-6 reveal-element reveal-delay-2">
+          <div class="glass-card tech-card tech-card-purple">
+            <div class="tech-icon-container"><i class="fa-solid fa-microchip"></i></div>
+            <h4 class="mb-3">Edge Hardware</h4>
+            <p class="text-secondary mb-0">Optimized to run on CCTV nodes, Raspberry Pi configurations, or mobile phone microprocessors.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Modules Section -->
+  <section id="modules" class="bg-secondary bg-opacity-50">
+    <div class="container">
+      <div class="section-title-container text-center reveal-element">
+        <span class="section-subtitle">Functional Architecture</span>
+        <h2 class="h1">Core Modules</h2>
+        <p class="text-secondary max-width-600 mx-auto">10 modular services structured to process spikes cleanly, saving power and computing latency.</p>
+      </div>
+      
+      <div class="module-grid">
+        <!-- Module 1 -->
+        <div class="glass-card module-card reveal-element">
+          <div class="module-icon"><i class="fa-solid fa-video"></i></div>
+          <div>
+            <h5 class="module-title">1. Video Acquisition</h5>
+            <p class="module-desc text-secondary">Establishes real-time RTSP/RTMP endpoints with adaptive framerate handling.</p>
+          </div>
+        </div>
+        <!-- Module 2 -->
+        <div class="glass-card module-card reveal-element">
+          <div class="module-icon"><i class="fa-solid fa-wave-square"></i></div>
+          <div>
+            <h5 class="module-title">2. Event Detection Engine</h5>
+            <p class="module-desc text-secondary">Low-cost background subtraction checker that spots pixel delta modifications.</p>
+          </div>
+        </div>
+        <!-- Module 3 -->
+        <div class="glass-card module-card reveal-element">
+          <div class="module-icon"><i class="fa-solid fa-list-ol"></i></div>
+          <div>
+            <h5 class="module-title">3. Spike Event Queue</h5>
+            <p class="module-desc text-secondary">Buffers spike activations to handle packet bursts cleanly during peak motion.</p>
+          </div>
+        </div>
+        <!-- Module 4 -->
+        <div class="glass-card module-card reveal-element">
+          <div class="module-icon"><i class="fa-solid fa-arrows-spin"></i></div>
+          <div>
+            <h5 class="module-title">4. Asynchronous Processor</h5>
+            <p class="module-desc text-secondary">Spins worker tasks concurrently to run detections without freezing video feeds.</p>
+          </div>
+        </div>
+        <!-- Module 5 -->
+        <div class="glass-card module-card reveal-element">
+          <div class="module-icon"><i class="fa-solid fa-bullseye"></i></div>
+          <div>
+            <h5 class="module-title">5. Object Detection</h5>
+            <p class="module-desc text-secondary">Executes YOLOv8 checks on buffered frames to extract tags (human, vehicle, etc.).</p>
+          </div>
+        </div>
+        <!-- Module 6 -->
+        <div class="glass-card module-card reveal-element">
+          <div class="module-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <div>
+            <h5 class="module-title">6. Threat Analysis</h5>
+            <p class="module-desc text-secondary">Matches extracted tags against local alert rules and custom vector bounds.</p>
+          </div>
+        </div>
+        <!-- Module 7 -->
+        <div class="glass-card module-card reveal-element">
+          <div class="module-icon"><i class="fa-solid fa-file-image"></i></div>
+          <div>
+            <h5 class="module-title">7. Snapshot Generator</h5>
+            <p class="module-desc text-secondary">Caches the high-resolution frame matching active alert triggers as JPEG.</p>
+          </div>
+        </div>
+        <!-- Module 8 -->
+        <div class="glass-card module-card reveal-element">
+          <div class="module-icon"><i class="fa-solid fa-bell"></i></div>
+          <div>
+            <h5 class="module-title">8. Alert System</h5>
+            <p class="module-desc text-secondary">Pushes live event snapshots to WebSockets, emails, and discord webhook targets.</p>
+          </div>
+        </div>
+        <!-- Module 9 -->
+        <div class="glass-card module-card reveal-element">
+          <div class="module-icon"><i class="fa-solid fa-database"></i></div>
+          <div>
+            <h5 class="module-title">9. Database Logging</h5>
+            <p class="module-desc text-secondary">Logs occurrences timestamps, labels, and inference confidence metrics in DB.</p>
+          </div>
+        </div>
+        <!-- Module 10 -->
+        <div class="glass-card module-card reveal-element">
+          <div class="module-icon"><i class="fa-solid fa-chart-line"></i></div>
+          <div>
+            <h5 class="module-title">10. Analytics Dashboard</h5>
+            <p class="module-desc text-secondary">Visualizes cumulative power savings, camera logs, and alerts in the FastAPI UI.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Neuromorphic Intelligence Section -->
+  <section id="neuromorphic">
+    <div class="container">
+      <div class="section-title-container text-center reveal-element">
+        <span class="section-subtitle">Cognitive Foundations</span>
+        <h2 class="h1">Neuromorphic Principles</h2>
+        <p class="text-secondary max-width-600 mx-auto">Emulating biological systems to restructure standard computer vision feeds.</p>
+      </div>
+      
+      <div class="row g-4">
+        <!-- Principle 1 -->
+        <div class="col-md-4 col-sm-6 reveal-element">
+          <div class="glass-card module-card module-card-purple h-100">
+            <div class="module-icon neuro-icon"><i class="fa-solid fa-bolt-lightning"></i></div>
+            <div>
+              <h5 class="module-title">Event-Driven Processing</h5>
+              <p class="module-desc text-secondary">Zero processor ticks spent when frames display static textures. Computations wake strictly when changes break limits.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Principle 2 -->
+        <div class="col-md-4 col-sm-6 reveal-element reveal-delay-1">
+          <div class="glass-card module-card module-card-purple h-100">
+            <div class="module-icon neuro-icon"><i class="fa-solid fa-circle-nodes"></i></div>
+            <div>
+              <h5 class="module-title">Sparse Activation</h5>
+              <p class="module-desc text-secondary">Only a fraction of the neural pipeline resides in dynamic memory at once, replicating sparse brain signals.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Principle 3 -->
+        <div class="col-md-4 col-sm-6 reveal-element reveal-delay-2">
+          <div class="glass-card module-card module-card-purple h-100">
+            <div class="module-icon neuro-icon"><i class="fa-solid fa-chart-simple"></i></div>
+            <div>
+              <h5 class="module-title">Spiking Networks</h5>
+              <p class="module-desc text-secondary">Inputs represent temporal events (spikes) rather than continuous value arrays, minimizing processing footprint.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Principle 4 -->
+        <div class="col-md-4 col-sm-6 reveal-element">
+          <div class="glass-card module-card module-card-purple h-100">
+            <div class="module-icon neuro-icon"><i class="fa-solid fa-water"></i></div>
+            <div>
+              <h5 class="module-title">Asynchronous Streaming</h5>
+              <p class="module-desc text-secondary">Modules execute logic out-of-sync, resolving delays that freeze standard frame-based capture cycles.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Principle 5 -->
+        <div class="col-md-4 col-sm-6 reveal-element reveal-delay-1">
+          <div class="glass-card module-card module-card-purple h-100">
+            <div class="module-icon neuro-icon"><i class="fa-solid fa-network-wired"></i></div>
+            <div>
+              <h5 class="module-title">Parallel Processing</h5>
+              <p class="module-desc text-secondary">Distributes independent video feed triggers across parallel CPU cores, ensuring scalable load management.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Principle 6 -->
+        <div class="col-md-4 col-sm-6 reveal-element reveal-delay-2">
+          <div class="glass-card module-card module-card-purple h-100">
+            <div class="module-icon neuro-icon"><i class="fa-solid fa-battery-half"></i></div>
+            <div>
+              <h5 class="module-title">Low-Power Computing</h5>
+              <p class="module-desc text-secondary">Saves up to 92% CPU loads under idle periods, translating directly to massive cost benefits.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Workflow Section -->
+  <section id="workflow" class="bg-secondary bg-opacity-50">
+    <div class="container">
+      <div class="section-title-container text-center reveal-element">
+        <span class="section-subtitle">System Timelines</span>
+        <h2 class="h1">State Machine in Action</h2>
+        <p class="text-secondary max-width-600 mx-auto">Compare system state logs between a normal static environment and an active threat zone trigger.</p>
+      </div>
+      
+      <div class="workflow-comparison-container">
+        <!-- Scenario 1 -->
+        <div class="reveal-element">
+          <h4 class="mb-4 text-center text-secondary font-mono"><i class="fa-solid fa-moon me-2"></i>Scenario 1: Idle Static State</h4>
+          <div class="workflow-timeline workflow-timeline-pink" id="timeline-idle">
+            <div class="workflow-item active-workflow">
+              <div class="workflow-dot"></div>
+              <div class="workflow-content">
+                <h6>Frame Acquired</h6>
+                <p class="text-secondary small mb-0">Empty surveillance zone captured by stream module.</p>
+              </div>
+            </div>
+            <div class="workflow-item">
+              <div class="workflow-dot"></div>
+              <div class="workflow-content">
+                <h6>Subtractor Compare</h6>
+                <p class="text-secondary small mb-0">Frame diff output indicates 0.02% pixel changes (noise).</p>
+              </div>
+            </div>
+            <div class="workflow-item">
+              <div class="workflow-dot"></div>
+              <div class="workflow-content">
+                <h6>Core Sleep Maintained</h6>
+                <p class="text-secondary small mb-0">Pipeline rejects trigger. YOLO models sleep. CPU loads hold flat at ~2%.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Scenario 2 -->
+        <div class="reveal-element reveal-delay-2">
+          <h4 class="mb-4 text-center text-success font-mono"><i class="fa-solid fa-person-running me-2"></i>Scenario 2: Active Threat Spike</h4>
+          <div class="workflow-timeline workflow-timeline-green" id="timeline-active">
+            <div class="workflow-item active-workflow">
+              <div class="workflow-dot"></div>
+              <div class="workflow-content">
+                <h6>Intrusion Detected</h6>
+                <p class="text-secondary small mb-0">Human steps in view. Frame diff registers 12.8% change spike.</p>
+              </div>
+            </div>
+            <div class="workflow-item">
+              <div class="workflow-dot"></div>
+              <div class="workflow-content">
+                <h6>Pipeline Wake Alert</h6>
+                <p class="text-secondary small mb-0">Spike Queue registers trigger, wakes local worker task instantly.</p>
+              </div>
+            </div>
+            <div class="workflow-item">
+              <div class="workflow-dot"></div>
+              <div class="workflow-content">
+                <h6>Threat Classified & Logged</h6>
+                <p class="text-secondary small mb-0">YOLOv8 runs, flags 'Human' with 94% confidence. Snapshot saved, DB logged, alert fired.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section id="benefits">
+    <div class="container">
+      <div class="section-title-container text-center reveal-element">
+        <span class="section-subtitle">Performance Benchmark</span>
+        <h2 class="h1">System Efficiency Benefits</h2>
+        <p class="text-secondary max-width-600 mx-auto">Tangible compute and power savings metrics collected across real camera tests.</p>
+      </div>
+      
+      <div class="row g-5 align-items-center">
+        <!-- Counters column -->
+        <div class="col-lg-5 reveal-element">
+          <div class="benefits-stats-container">
+            <div class="glass-card text-center mb-3">
+              <h3 class="text-gradient font-mono count-up" data-target="95">0%</h3>
+              <p class="text-secondary small mb-0">Less Processing Required</p>
+            </div>
+            <div class="glass-card text-center mb-3 glass-card-purple">
+              <h3 class="text-gradient font-mono count-up" data-target="92">0%</h3>
+              <p class="text-secondary small mb-0">Cumulative CPU Savings</p>
+            </div>
+            <div class="glass-card text-center">
+              <h3 class="text-gradient font-mono"><span class="count-up" data-target="3">0</span>x</h3>
+              <p class="text-secondary small mb-0">Faster Threat Response</p>
+            </div>
+            <div class="glass-card text-center glass-card-purple">
+              <h3 class="text-gradient font-mono"><span class="count-up" data-target="10">0</span>x</h3>
+              <p class="text-secondary small mb-0">Scale-out Potential</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Graph column -->
+        <div class="col-lg-7 reveal-element reveal-delay-2">
+          <div class="glass-card h-100">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <h5 class="mb-0">CPU Load Comparison (%)</h5>
+              <span class="badge bg-dark border border-secondary border-opacity-10 font-mono text-info">Realtime Test</span>
+            </div>
+            <div class="chart-container">
+              <canvas id="benchmark-chart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Applications Section -->
+  <section id="applications" class="bg-secondary bg-opacity-50">
+    <div class="container">
+      <div class="section-title-container text-center reveal-element">
+        <span class="section-subtitle">Deployment Use-cases</span>
+        <h2 class="h1">Suited for Multiple Sectors</h2>
+        <p class="text-secondary max-width-600 mx-auto">Wherever CCTV cameras are deployed, NeuroVision AI optimizes the cost of intelligence.</p>
+      </div>
+      
+      <div class="row g-4">
+        <!-- App 1 -->
+        <div class="col-md-4 col-sm-6 reveal-element">
+          <div class="glass-card app-card">
+            <span class="app-icon"><i class="fa-solid fa-house-shield"></i></span>
+            <h4>Home Security</h4>
+            <p class="text-secondary mb-0">Sleep-mode monitors porches, waking instantly to flag human packages or threat intrusions.</p>
+          </div>
+        </div>
+        <!-- App 2 -->
+        <div class="col-md-4 col-sm-6 reveal-element reveal-delay-1">
+          <div class="glass-card app-card">
+            <span class="app-icon"><i class="fa-solid fa-city"></i></span>
+            <h4>Smart Cities</h4>
+            <p class="text-secondary mb-0">Integrates with public cameras to trigger alerts during vehicle pileups or structural fire hazards.</p>
+          </div>
+        </div>
+        <!-- App 3 -->
+        <div class="col-md-4 col-sm-6 reveal-element reveal-delay-2">
+          <div class="glass-card app-card">
+            <span class="app-icon"><i class="fa-solid fa-road"></i></span>
+            <h4>Traffic Monitoring</h4>
+            <p class="text-secondary mb-0">Maintains sleep during open highway periods. Logs vehicle logs on sudden motion surges.</p>
+          </div>
+        </div>
+        <!-- App 4 -->
+        <div class="col-md-4 col-sm-6 reveal-element">
+          <div class="glass-card app-card">
+            <span class="app-icon"><i class="fa-solid fa-heart-pulse"></i></span>
+            <h4>Elderly Care</h4>
+            <p class="text-secondary mb-0">Continuously checks rooms for fall anomalies without invading privacy with constant streaming.</p>
+          </div>
+        </div>
+        <!-- App 5 -->
+        <div class="col-md-4 col-sm-6 reveal-element reveal-delay-1">
+          <div class="glass-card app-card">
+            <span class="app-icon"><i class="fa-solid fa-tree"></i></span>
+            <h4>Wildlife Monitoring</h4>
+            <p class="text-secondary mb-0">Runs on low-capacity solar batteries in forests, logging animal spikes while ignoring wind leaves.</p>
+          </div>
+        </div>
+        <!-- App 6 -->
+        <div class="col-md-4 col-sm-6 reveal-element reveal-delay-2">
+          <div class="glass-card app-card">
+            <span class="app-icon"><i class="fa-solid fa-industry"></i></span>
+            <h4>Industrial Safety</h4>
+            <p class="text-secondary mb-0">Monitors hazardous zones, logging immediate alert snapshots if humans trespass safety bounds.</p>
+          </div>
+        </div>
+        <!-- App 7 -->
+        <div class="col-md-4 col-sm-6 reveal-element">
+          <div class="glass-card app-card">
+            <span class="app-icon"><i class="fa-solid fa-square-parking"></i></span>
+            <h4>Parking Systems</h4>
+            <p class="text-secondary mb-0">Flags vacant bays or cars parking in disabled bays. Wakes only when a car crosses bounds.</p>
+          </div>
+        </div>
+        <!-- App 8 -->
+        <div class="col-md-4 col-sm-6 reveal-element reveal-delay-1">
+          <div class="glass-card app-card">
+            <span class="app-icon"><i class="fa-solid fa-train"></i></span>
+            <h4>Railway Stations</h4>
+            <p class="text-secondary mb-0">Monitors platform safety bounds, raising spikes if people cross platform boundaries.</p>
+          </div>
+        </div>
+        <!-- App 9 -->
+        <div class="col-md-4 col-sm-6 reveal-element reveal-delay-2">
+          <div class="glass-card app-card">
+            <span class="app-icon"><i class="fa-solid fa-shield-halved"></i></span>
+            <h4>Military Surveillance</h4>
+            <p class="text-secondary mb-0">Secures perimeter boundaries using event-driven active tracking with zero network leakage.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live Dashboard Mockup Section -->
+  <section id="dashboard">
+    <div class="container">
+      <div class="section-title-container text-center reveal-element">
+        <span class="section-subtitle">Live Mockup View</span>
+        <h2 class="h1">FastAPI Dashboard Preview</h2>
+        <p class="text-secondary max-width-600 mx-auto">Explore this simulation of a live security grid. Check logs as the system sleeps, wakes, and runs YOLO checks in real time.</p>
+      </div>
+      
+      <!-- Interactive dashboard mockup structure -->
+      <div class="dashboard-mockup reveal-element">
+        <!-- Header -->
+        <div class="db-header">
+          <div class="d-flex align-items-center gap-3">
+            <span class="db-brand text-gradient"><i class="fa-solid fa-eye me-2"></i>NEUROVISION CONSOLE</span>
+            <span class="badge bg-dark border border-secondary border-opacity-10 text-secondary font-mono small">v1.0.4-beta</span>
+          </div>
+          <div class="db-status">
+            <span class="db-status-dot"></span>
+            <span id="system-status-text">PIPELINE MONITOR ACTIVE</span>
+          </div>
+        </div>
+        
+        <!-- Dashboard content body -->
+        <div class="db-body">
+          <!-- Mini Stats Cards Row -->
+          <div class="db-stats-row text-white">
+            <div class="db-stat-mini">
+              <div class="db-stat-mini-value text-gradient" id="stat-events">48</div>
+              <div class="db-stat-mini-label">Total Events Logged</div>
+            </div>
+            <div class="db-stat-mini">
+              <div class="db-stat-mini-value text-success" id="stat-humans">18</div>
+              <div class="db-stat-mini-label">Humans Detected</div>
+            </div>
+            <div class="db-stat-mini">
+              <div class="db-stat-mini-value text-info" id="stat-cpu-saved">92%</div>
+              <div class="db-stat-mini-label">Avg CPU Saved</div>
+            </div>
+            <div class="db-stat-mini">
+              <div class="db-stat-mini-value text-gradient" id="stat-skipped">178,240</div>
+              <div class="db-stat-mini-label">Frames Skipped (Idle)</div>
+            </div>
+          </div>
+          
+          <!-- Main grid layout: Camera Canvas & Alerts logs -->
+          <div class="db-main-grid">
+            <!-- Simulated CCTV canvas -->
+            <div class="db-video-wrapper">
+              <div class="db-video-overlay">
+                <span class="db-video-tag db-video-tag-live"><i class="fa-solid fa-circle me-1"></i>LIVE FEED</span>
+                <span class="db-video-tag text-muted">CAM-03 OUTDOOR GATE</span>
+                <span class="db-video-tag text-info font-mono" id="feed-fps-label">SLEEP (0 FPS)</span>
+              </div>
+              <div class="db-video-scanner"></div>
+              <canvas class="db-video-canvas" id="feed-canvas"></canvas>
+            </div>
+            
+            <!-- Real-time Alerts Log -->
+            <div class="db-alerts-panel">
+              <div class="db-alerts-header">
+                <span>Recent Event Logs</span>
+                <span class="badge bg-secondary bg-opacity-20 text-muted font-mono" style="font-size: 0.65rem;">Active Stream</span>
+              </div>
+              <div class="db-alerts-list" id="alerts-log-container">
+                <div class="db-alert-item db-alert-item-info">
+                  <span class="db-alert-icon db-alert-icon-info"><i class="fa-solid fa-circle-info"></i></span>
+                  <div class="db-alert-details">
+                    <div class="db-alert-msg text-white">System listening (CAM-03 outdoor gate)</div>
+                    <div class="db-alert-time">10:12:05 - CPU load ~1.8%</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Future Roadmap Section -->
+  <section id="roadmap">
+    <div class="container">
+      <div class="section-title-container text-center reveal-element">
+        <span class="section-subtitle">Roadmap Timeline</span>
+        <h2 class="h1">Future Enhancements</h2>
+        <p class="text-secondary max-width-600 mx-auto">Expanding the event-driven core to support advanced classification and smart response models.</p>
+      </div>
+      
+      <div class="roadmap-container reveal-element">
+        <div class="roadmap-line-horizontal"></div>
+        <div class="roadmap-scroller">
+          <!-- Phase 2 -->
+          <div class="roadmap-card active-phase">
+            <span class="roadmap-phase">Phase 2</span>
+            <h5 class="roadmap-card-title text-white">Face Recognition</h5>
+            <p class="text-secondary small mb-0">Implements facial vector database checking on active YOLO triggers, logging guest IDs.</p>
+          </div>
+          <!-- Phase 3 -->
+          <div class="roadmap-card">
+            <span class="roadmap-phase">Phase 3</span>
+            <h5 class="roadmap-card-title text-white">Weapon Detection</h5>
+            <p class="text-secondary small mb-0">Trains YOLO heads to identify pistols, knives, or batons, firing immediate alert webhooks.</p>
+          </div>
+          <!-- Phase 4 -->
+          <div class="roadmap-card">
+            <span class="roadmap-phase">Phase 4</span>
+            <h5 class="roadmap-card-title text-white">Fire & Smoke</h5>
+            <p class="text-secondary small mb-0">Identifies structural smoke expansion, bypass-warning normal movement rules.</p>
+          </div>
+          <!-- Phase 5 -->
+          <div class="roadmap-card">
+            <span class="roadmap-phase">Phase 5</span>
+            <h5 class="roadmap-card-title text-white">License Plate Recognition</h5>
+            <p class="text-secondary small mb-0">Extracts license string characters on vehicle detection spikes.</p>
+          </div>
+          <!-- Phase 6 -->
+          <div class="roadmap-card">
+            <span class="roadmap-phase">Phase 6</span>
+            <h5 class="roadmap-card-title text-white">Crowd Analysis</h5>
+            <p class="text-secondary small mb-0">Flags crowd cluster build-ups or stampede hazards at transit centers.</p>
+          </div>
+          <!-- Phase 7 -->
+          <div class="roadmap-card">
+            <span class="roadmap-phase">Phase 7</span>
+            <h5 class="roadmap-card-title text-white">Fall Detection</h5>
+            <p class="text-secondary small mb-0">Calculates body pose keypoints, notifying nursing staff if patient falls are flagged.</p>
+          </div>
+          <!-- Phase 8 -->
+          <div class="roadmap-card">
+            <span class="roadmap-phase">Phase 8</span>
+            <h5 class="roadmap-card-title text-white">Emotion Recognition</h5>
+            <p class="text-secondary small mb-0">Tracks face landmarks to categorize distress or rage responses during alerts.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Section -->
+  <section id="comparison" class="bg-secondary bg-opacity-50">
+    <div class="container">
+      <div class="section-title-container text-center reveal-element">
+        <span class="section-subtitle">Direct Comparison</span>
+        <h2 class="h1">Why NeuroVision AI is Unique</h2>
+        <p class="text-secondary max-width-600 mx-auto">Evaluating the parameters that set our neuromorphic model apart from classical setups.</p>
+      </div>
+      
+      <div class="row justify-content-center reveal-element">
+        <div class="col-lg-10">
+          <div class="compare-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Parameters</th>
+                  <th>Traditional CCTV</th>
+                  <th>NeuroVision AI</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="compare-feature">Processing Model</td>
+                  <td class="compare-trad">Continuous Frame Polling</td>
+                  <td class="compare-nv">Event-Driven Spike Activations</td>
+                </tr>
+                <tr>
+                  <td class="compare-feature">CPU / GPU Utilization</td>
+                  <td class="compare-trad">High continuous load (~80-95%)</td>
+                  <td class="compare-nv">Low idle (~2%), spikes only on event</td>
+                </tr>
+                <tr>
+                  <td class="compare-feature">Power Consumption</td>
+                  <td class="compare-trad">Always on high metabolic drain</td>
+                  <td class="compare-nv">Minimal power profile (92% savings)</td>
+                </tr>
+                <tr>
+                  <td class="compare-feature">Network Pipeline Bandwidth</td>
+                  <td class="compare-trad">Continuous heavy upload stream</td>
+                  <td class="compare-nv">Asynchronous local processing metadata</td>
+                </tr>
+                <tr>
+                  <td class="compare-feature">AI Model Application</td>
+                  <td class="compare-trad">Continuous evaluation (30 FPS)</td>
+                  <td class="compare-nv">Selective YOLO wakes on motion delta</td>
+                </tr>
+                <tr>
+                  <td class="compare-feature">Scale Deployment Cost</td>
+                  <td class="compare-trad">Requires high server clusters</td>
+                  <td class="compare-nv">Scales on Raspberry Pi or standard PCs</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final Pitch Section -->
+  <section id="final-pitch" class="final-pitch-section">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 reveal-element">
+          <h2 class="final-pitch-title text-white">
+            Traditional CCTV Watches Everything.<br>
+            <span class="text-gradient">NeuroVision AI Understands What Matters.</span>
+          </h2>
+          <p class="final-pitch-lead text-secondary">
+            NeuroVision AI is a neuromorphic, event-driven smart surveillance system that mimics the human brain by activating intelligence only when meaningful changes occur, reducing computational power while enabling real-time threat detection.
+          </p>
+          <div class="d-flex justify-content-center gap-3">
+            <a href="#dashboard" class="btn btn-neon btn-neon-solid">Request Demo</a>
+            <a href="https://github.com" target="_blank" class="btn btn-neon"><i class="fa-brands fa-github me-2"></i>View GitHub</a>
+            <a href="mailto:info@neurovision.ai" class="btn btn-neon btn-neon-purple"><i class="fa-solid fa-envelope me-2"></i>Contact Team</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="container">
+      <div class="row g-4 justify-content-between">
+        <!-- Logo and info -->
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-brand text-gradient"><i class="fa-solid fa-eye me-2"></i>NEUROVISION AI</div>
+          <p class="text-secondary small mb-4">
+            Emulating biological sensory architecture to deliver high-performance, cost-effective smart surveillance modules.
+          </p>
+          <div class="d-flex gap-3">
+            <a href="https://github.com" target="_blank" class="footer-social-icon"><i class="fa-brands fa-github"></i></a>
+            <a href="https://linkedin.com" target="_blank" class="footer-social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="mailto:info@neurovision.ai" class="footer-social-icon"><i class="fa-solid fa-envelope"></i></a>
+          </div>
+        </div>
+        
+        <!-- Technology links -->
+        <div class="col-lg-2 col-md-3 col-6">
+          <h6 class="text-white mb-3 text-uppercase font-mono small">Technology</h6>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="#" class="footer-link">OpenCV Core</a></li>
+            <li class="mb-2"><a href="#" class="footer-link">YOLOv8 Classifier</a></li>
+            <li class="mb-2"><a href="#" class="footer-link">FastAPI Pipeline</a></li>
+            <li class="mb-2"><a href="#" class="footer-link">Spike Event Queue</a></li>
+          </ul>
+        </div>
+        
+        <!-- Resources -->
+        <div class="col-lg-2 col-md-3 col-6">
+          <h6 class="text-white mb-3 text-uppercase font-mono small">Resources</h6>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="#architecture" class="footer-link">Pipeline Spec</a></li>
+            <li class="mb-2"><a href="#dashboard" class="footer-link">Console Demo</a></li>
+            <li class="mb-2"><a href="#roadmap" class="footer-link">Project Roadmap</a></li>
+            <li class="mb-2"><a href="https://github.com" target="_blank" class="footer-link">GitHub Code</a></li>
+          </ul>
+        </div>
+        
+        <!-- Contact details -->
+        <div class="col-lg-3 col-md-6">
+          <h6 class="text-white mb-3 text-uppercase font-mono small">Contact Us</h6>
+          <p class="text-secondary small mb-1"><i class="fa-solid fa-building me-2"></i>NeuroVision AI Lab, Tokyo Research District</p>
+          <p class="text-secondary small mb-1"><i class="fa-solid fa-envelope me-2"></i>info@neurovision.ai</p>
+          <p class="text-secondary small mb-1"><i class="fa-solid fa-phone me-2"></i>+81 3-5555-0199</p>
+        </div>
+      </div>
+      
+      <!-- Footer bottom -->
+      <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center">
+        <span class="text-center text-md-start mb-2 mb-md-0">&copy; 2026 NeuroVision AI. Licensed under MIT.</span>
+        <div class="d-flex gap-4">
+          <a href="#" class="text-muted text-decoration-none small">Privacy Policy</a>
+          <a href="#" class="text-muted text-decoration-none small">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <!-- Custom Application Scripts -->
+  <script src="app.js"></script>
+</body>
+</html>
