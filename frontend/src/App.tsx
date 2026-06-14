@@ -9,10 +9,11 @@ import { DashboardPage } from '@/pages/DashboardPage'
 
 export default function App() {
   const location = useLocation()
+  const isDashboard = location.pathname === '/dashboard'
 
   return (
     <>
-      <Particles quantity={50} />
+      {!isDashboard && <Particles quantity={40} />}
       <Navbar />
       <AnimatePresence mode="wait">
         <PageTransition key={location.pathname}>

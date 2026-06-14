@@ -18,7 +18,7 @@ export function Footer() {
               cost-effective event-driven surveillance.
             </p>
             <div className="flex gap-4 mt-6">
-              <a href="https://github.com" className="text-muted-foreground hover:text-nv-cyan transition-colors" aria-label="GitHub">
+              <a href="https://github.com/adiyajha/NeuroVision-AI" className="text-muted-foreground hover:text-nv-cyan transition-colors" aria-label="GitHub">
                 <Github className="h-5 w-5" />
               </a>
               <a href="https://linkedin.com" className="text-muted-foreground hover:text-nv-cyan transition-colors" aria-label="LinkedIn">

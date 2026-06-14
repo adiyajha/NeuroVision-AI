@@ -2,6 +2,8 @@
 
 Brain-inspired event-driven surveillance platform applying neuromorphic computing principles. Intelligence activates only when meaningful events occur — reducing CPU usage by **92%** while enabling real-time threat detection.
 
+**Repository:** [github.com/adiyajha/NeuroVision-AI](https://github.com/adiyajha/NeuroVision-AI)
+
 ## Project Structure
 
 ```
@@ -96,7 +98,7 @@ If the repo is not on GitHub yet:
 
 ```powershell
 cd "C:\Users\hp\OneDrive\ドキュメント\GitHub\neurovision-ai"
-git remote add origin https://github.com/YOUR_USERNAME/neurovision-ai.git
+git remote add origin https://github.com/adiyajha/NeuroVision-AI.git
 git push -u origin main
 ```
 

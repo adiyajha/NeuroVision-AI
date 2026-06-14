@@ -39,6 +39,11 @@ const MOCK_STATS: SystemStats = {
     { label: 'Animal', count: 15, percentage: 10.2 },
     { label: 'Other', count: 8, percentage: 5.4 },
   ],
+  resource_utilization_history: Array.from({ length: 12 }, (_, i) => ({
+    time: `${i * 2}h`,
+    cpu: Math.round((8 + Math.sin(i * 0.6) * 4) * 10) / 10,
+    memory: Math.round((32 + Math.cos(i * 0.5) * 6) * 10) / 10,
+  })),
 }
 
 export function useStats(refreshInterval = 30000) {

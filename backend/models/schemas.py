@@ -63,6 +63,12 @@ class DetectionStat(BaseModel):
     percentage: float
 
 
+class ResourcePoint(BaseModel):
+    time: str
+    cpu: float
+    memory: float
+
+
 class StatsResponse(BaseModel):
     events_today: int
     cpu_saved_percent: float
@@ -80,6 +86,7 @@ class StatsResponse(BaseModel):
     cpu_savings_history: list[ChartPoint]
     frames_skipped_history: list[ChartPoint]
     detection_stats: list[DetectionStat]
+    resource_utilization_history: list[ResourcePoint]
 
 
 class HealthResponse(BaseModel):

@@ -6,7 +6,7 @@ from models.event import EventModel
 from models.alert import AlertModel
 from models.schemas import (
     EventCreate, EventResponse, AlertCreate, AlertResponse,
-    StatsResponse, TimelinePoint, ChartPoint, DetectionStat,
+    StatsResponse, TimelinePoint, ChartPoint, DetectionStat, ResourcePoint,
 )
 from utils.helpers import generate_id, utc_now
 
@@ -98,6 +98,14 @@ def get_stats(db: Session) -> StatsResponse:
             DetectionStat(label="Package", count=22, percentage=15.0),
             DetectionStat(label="Animal", count=15, percentage=10.2),
             DetectionStat(label="Other", count=8, percentage=5.4),
+        ],
+        resource_utilization_history=[
+            ResourcePoint(
+                time=f"{i * 2}h",
+                cpu=round(random.uniform(4, 14), 1),
+                memory=round(random.uniform(24, 42), 1),
+            )
+            for i in range(12)
         ],
     )
 

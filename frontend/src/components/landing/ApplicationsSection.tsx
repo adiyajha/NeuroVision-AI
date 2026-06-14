@@ -30,7 +30,7 @@ export function ApplicationsSection() {
 
         <FadeIn>
           <BentoGrid>
-            {applications.map((app, i) => (
+            {applications.map((app) => (
               <BentoCard
                 key={app.name}
                 name={app.name}

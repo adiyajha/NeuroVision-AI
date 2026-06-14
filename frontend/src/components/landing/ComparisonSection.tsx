@@ -19,8 +19,8 @@ export function ComparisonSection() {
         </FadeIn>
 
         <FadeIn>
-          <div className="glass-card overflow-hidden">
-            <table className="w-full text-sm">
+          <div className="glass-card overflow-hidden overflow-x-auto">
+            <table className="w-full text-sm min-w-[640px]">
               <thead>
                 <tr className="border-b border-white/[0.06]">
                   <th className="text-left p-4 text-muted-foreground font-mono text-xs uppercase">Parameter</th>

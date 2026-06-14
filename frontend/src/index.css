@@ -48,6 +48,17 @@
   .tremor-TabList-root {
     @apply !bg-white/5;
   }
+
+  .chart-dark {
+    @apply [&_.recharts-cartesian-axis-tick-value]:!fill-[#71717a]
+      [&_.recharts-legend-item-text]:!text-[#a1a1aa]
+      [&_.recharts-cartesian-grid-horizontal_line]:!stroke-white/[0.06]
+      [&_.recharts-cartesian-grid-vertical_line]:!stroke-white/[0.04];
+  }
+
+  .tremor-ProgressBar-progress {
+    @apply !rounded-full;
+  }
 }
 
 @layer components {

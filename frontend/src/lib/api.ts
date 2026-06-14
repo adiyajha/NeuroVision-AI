@@ -59,6 +59,7 @@ export interface SystemStats {
   cpu_savings_history: ChartPoint[]
   frames_skipped_history: ChartPoint[]
   detection_stats: DetectionStat[]
+  resource_utilization_history: ResourcePoint[]
 }
 
 export interface TimelinePoint {
@@ -70,6 +71,12 @@ export interface TimelinePoint {
 export interface ChartPoint {
   time: string
   value: number
+}
+
+export interface ResourcePoint {
+  time: string
+  cpu: number
+  memory: number
 }
 
 export interface DetectionStat {
